@@ -1,0 +1,46 @@
+.section {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  padding: 1em;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4em 3em;
+  background: #fff;
+  box-shadow: 10px 10px 5px 5px var(--shadow-clr);
+  border-radius: 30px;
+}
+.formTitle {
+  margin-bottom: 1em;
+}
+.inputContainer {
+  margin-bottom: 1em;
+}
+.inputLabel {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.input,
+.loginBtn {
+  font-size: 1rem;
+  padding: 0.6em 1.2em;
+  color: var(--text-clr);
+  background: var(--input-bg-clr);
+  border: none;
+  outline: none;
+  border-radius: 30px;
+}
+.loginBtn {
+  width: 100%;
+  margin-top: 2em;
+  color: #fff;
+  background: var(--accent-clr);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.loginBtn:hover {
+  transform: scale(1.03);
+}

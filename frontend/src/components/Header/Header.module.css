@@ -1,0 +1,38 @@
+.headerBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5em 2em;
+  color: #fff;
+  background: var(--menu-bg-clr);
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuLogo {
+  width: 50px;
+}
+.navLogoRef {
+  display: flex;
+  align-items: center;
+}
+
+/* ========== Nav ==========*/
+.menuNav {
+  transition: 0.5s;
+  /* padding: 1em 2em; */
+  display: flex;
+  align-items: center;
+}
+.landingMenuLink,
+.landingMenuExitLink {
+  padding: 0.5em 1em;
+
+  transition: 0.3s;
+}
+.landingMenuLink:hover,
+.landingMenuExitLink {
+  color: var(--accent-clr);
+}

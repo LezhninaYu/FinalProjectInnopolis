@@ -1,0 +1,62 @@
+.card {
+  padding: 2em;
+  margin: 1em 0;
+  max-width: 1100px;
+  color: var(--text-clr);
+  background: #fff;
+  box-shadow: 10px 10px 5px 5px var(--shadow-clr);
+  border-radius: 30px;
+}
+.title {
+  margin-bottom: 0.6em;
+}
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 2em;
+}
+.editBtn,
+.deleteBtn {
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  margin-left: 1em;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.editBtn:hover,
+.deleteBtn:hover {
+  transform: scale(1.02);
+}
+.editBtn {
+  color: #fff;
+  background: var(--menu-bg-clr);
+}
+.deleteBtn {
+  color: var(--accent-clr);
+  background: transparent;
+  border: 1px solid var(--accent-clr);
+}
+
+/* ========== Is Edited ==========*/
+.titleInput,
+.textInput {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  padding: 0.6em 1.2em;
+  color: var(--text-clr);
+  background: var(--input-bg-clr);
+  border: none;
+  outline: none;
+  border-radius: 30px;
+}
+.titleInputContainer {
+  margin-bottom: 1em;
+}
+.textInput {
+  max-width: 1000px;
+  resize: vertical;
+}
