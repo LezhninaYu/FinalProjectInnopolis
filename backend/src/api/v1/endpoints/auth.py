@@ -42,10 +42,10 @@ async def login_user(user: UserInLogin = Body(...), db: Session = Depends(get_db
     user_finded = db.query(User).filter(User.email == user.email).first()
 
     if user_finded is None:
-        return HTTPException(HTTP_404_NOT_FOUND)
+        raise HTTPException(HTTP_404_NOT_FOUND)
 
     if not verify_password(user.password, user_finded.password):
-        return HTTPException(HTTP_400_BAD_REQUEST)
+        raise HTTPException(HTTP_400_BAD_REQUEST)
 
     token = create_access_token(user_finded, JWT_SECRET)
 

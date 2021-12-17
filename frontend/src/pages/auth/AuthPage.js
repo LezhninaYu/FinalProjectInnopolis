@@ -25,7 +25,6 @@ export default function AuthPage() {
 
   const handleLogin = async e => {
     e.preventDefault();
-
     e.preventDefault();
 
     const authData = {
@@ -33,42 +32,41 @@ export default function AuthPage() {
       password: password,
     };
 
-    const authReponse = await API.post(`/users/login`, authData);
-    console.log(authReponse)
-    if (authReponse.status === 200) {
+    const authReponse = await API.post(`/users/login`, authData).then(() => {
       localStorage.setItem('isAuth', 'true');
       setisAuth(true);
       alert("Successful login");
       navigate('/posts');
-    }
-    else if (authReponse.status === 404) {
-      alert("User not found");
-    }
-    else if (authReponse.status === 400) {
-      alert("Bad credentials");
-    }
+    }).catch(function (error) {
+      if (error.response.status === 404) {
+        alert("User not found");
+      }
+      else if (error.response.status === 400) {
+        alert("Bad credentials");
+      }
+    });
 
   };
 
   return (
-    <>
-      <Header props={true} />
-      <section className={styles.section}>
-        <form className={styles.form}>
-          <h1 className={styles.formTitle}>Логин</h1>
-          <div className={styles.inputContainer}>
-            <label className={styles.inputLabel}>Почта</label>
-            <input className={styles.input} onChange={handleEmailChange} type='text' />
-          </div>
-          <div className={styles.inputContainer}>
-            <label className={styles.inputLabel}>Пароль</label>
-            <input className={styles.input} onChange={handlePasswordChange} type='password' />
-          </div>
-          <button className={styles.loginBtn} onClick={handleLogin}>
-            Войти
-          </button>
-        </form>
-      </section>
-    </>
+      <>
+        <Header props={true} />
+        <section className={styles.section}>
+          <form className={styles.form}>
+            <h1 className={styles.formTitle}>Логин</h1>
+            <div className={styles.inputContainer}>
+              <label className={styles.inputLabel}>Почта</label>
+              <input className={styles.input} onChange={handleEmailChange} type='text' />
+            </div>
+            <div className={styles.inputContainer}>
+              <label className={styles.inputLabel}>Пароль</label>
+              <input className={styles.input} onChange={handlePasswordChange} type='password' />
+            </div>
+            <button className={styles.loginBtn} onClick={handleLogin}>
+              Войти
+            </button>
+          </form>
+        </section>
+      </>
   );
 }
