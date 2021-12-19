@@ -23,30 +23,30 @@ export default function AuthPage() {
     setPassword(e.target.value);
   };
 
-  const handleLogin = async e => {
-    e.preventDefault();
-    e.preventDefault();
+    const handleLogin = async e => {
+        e.preventDefault();
 
-    const authData = {
-      email: email,
-      password: password,
+        const authData = {
+            email: email,
+            password: password,
+        };
+
+        let authReponse = null;
+        try {
+            authReponse = await API.post(`/users/login`, authData);
+            localStorage.setItem('isAuth', 'true');
+            setisAuth(true);
+            alert("Successful login");
+            navigate('/posts');
+        } catch (err) {
+            if (err.response.status === 404) {
+                alert("User not found");
+            }
+            else if (err.response.status === 404) {
+                alert("Bad credentials");
+            }
+        }
     };
-
-    const authReponse = await API.post(`/users/login`, authData).then(() => {
-      localStorage.setItem('isAuth', 'true');
-      setisAuth(true);
-      alert("Successful login");
-      navigate('/posts');
-    }).catch(function (error) {
-      if (error.response.status === 404) {
-        alert("User not found");
-      }
-      else if (error.response.status === 400) {
-        alert("Bad credentials");
-      }
-    });
-
-  };
 
   return (
       <>
