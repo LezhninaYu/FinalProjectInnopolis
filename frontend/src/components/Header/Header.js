@@ -20,12 +20,12 @@ const Header = ({ props }) => {
         <img className={styles.menuLogo} src={logo} alt='Логотип' />
       </Link>
       <nav className={styles.menuNav}>
-        <a href='/' className={styles.landingMenuLink}>
+        <Link  className={styles.landingMenuLink} to='/'>
           Главная
-        </a>
-        <a href='/' className={styles.landingMenuLink}>
-          О проекте
-        </a>
+        </Link>
+        <Link className={styles.landingMenuLink} to='/posts' >
+          Содержание
+        </Link>
         <a href='https://github.com/LezhninaYu' className={styles.landingMenuLink}>
           GitHub
         </a>
