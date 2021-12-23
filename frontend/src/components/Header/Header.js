@@ -26,7 +26,7 @@ const Header = ({ props }) => {
         <a href='/' className={styles.landingMenuLink}>
           О проекте
         </a>
-        <a href='/' className={styles.landingMenuLink}>
+        <a href='https://github.com/LezhninaYu' className={styles.landingMenuLink}>
           GitHub
         </a>
         {!isLanding && (
