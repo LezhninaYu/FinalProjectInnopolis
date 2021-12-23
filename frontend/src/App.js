@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthContext } from './context';
 import AuthPage from './pages/auth/AuthPage';
+import AboutPage from './pages/about/AboutPage';
 import LandingPage from './pages/landing/LandingPage';
 import PostsPage from './pages/posts/PostsPage';
 import ErrorPage from './pages/system/ErrorPage';
@@ -32,6 +33,7 @@ export default function App() {
           />
           <Route exact path='/' element={<LandingPage />} />
           <Route exact path='/login' element={<AuthPage />} />
+          <Route exact path='/about' element={<AboutPage />} />
           <Route exact path='/posts' element={<PostsPage />} />
           <Route exact path='*' element={<ErrorPage />} />
         </Routes>

@@ -23,6 +23,9 @@ const Header = ({ props }) => {
         <Link  className={styles.landingMenuLink} to='/'>
           Главная
         </Link>
+        <Link  className={styles.landingMenuLink} to='/about'>
+          О проекте
+        </Link>
         <Link className={styles.landingMenuLink} to='/posts' >
           Содержание
         </Link>
