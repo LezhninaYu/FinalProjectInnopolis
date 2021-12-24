@@ -1,7 +1,12 @@
 .section {
   display: grid;
   place-content: center;
-  height: 100vh;
+  height: 80vh;
+  padding: 1em;
+}
+.footerSection {
+  display: grid;
+  place-content: flex-start;
   padding: 1em;
 }
 .form {
@@ -15,6 +20,10 @@
 }
 .formTitle {
   text-align: center;
+  margin-bottom: 1em;
+}
+.footerTitle {
+  text-align: left;
   margin-bottom: 1em;
 }
 .startBtn {

@@ -21,6 +21,12 @@ export default function LandingPage() {
           <button onClick={handleClick} className={styles.startBtn}>Начать!</button>
         </div>
       </section>
+      <footer className={styles.footerSection}>
+        <h2 className={styles.footerTitle}>
+          Разработчик: Лежнина Юлия Аркадьевна <br />
+          Иннополис, 2021
+        </h2>
+      </footer>
     </>
   );
 }
